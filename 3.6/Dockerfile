@@ -11,10 +11,9 @@ LABEL maintainer="Steven Munro (stevenmunro at me dot com)"
     ARG MAJOR_VERSION=3.6
 
 
-    RUN  \
-        
 ### Install MailHog
-       apk --no-cache add --virtual mailhog-build-dependencies \
+    RUN apk update && \
+    apk --no-cache add --virtual mailhog-build-dependencies \
                 go \
                 git \
                 musl-dev \
